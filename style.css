@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root{
+    /* primary colors */
+--Light-red-work : hsl(15, 100%, 70%);
+--Soft-blue : hsl(195, 74%, 62%);
+--Light-red-study : hsl(348, 100%, 68%);
+--Lime-green: hsl(145, 58%, 55%);
+--Violet : hsl(264, 46%, 50%);
+--Soft : hsl(43, 84%, 65%);
+
+    /* natural colors */
+--Blue: hsl(246, 80%, 60%);
+--Dark-blue : hsl(235, 46%, 20%);
+--Desaturated-blue : hsl(235,45%, 61%);
+--Very-dark-blue : hsl(226, 43%, 10%);
+--Pale-Blue : hsl(236, 100%, 87%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-card{
+    width: 96%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.columns{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+.column-1,.column-2{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    height: 100%;
+}
+/* main card */
+.main-card{
+    background-color: var(--Dark-blue);
+    height: 100%;
+    width: 20%;
+    border-radius: 20px;
+}
+.main-card .users{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 70%;
+    background-color: var(--Blue);
+    border-radius: 20px;
+}
+.main-card .users img{
+    width: 80px;
+    border: 2px solid  #fff;
+    border-radius: 50%;
+}
+.main-card .users .name{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.main-card .users h4{
+    color: var(--Pale-Blue);
+}
+.main-card .users h1{
+    color: #fff;
+    font-weight: 300;
+}
+.main-card .date{
+    position: relative;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 12px;
+    background-color: var(--Dark-blue);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.main-card .date a{
+    text-decoration: none;
+    color: var(--Pale-Blue);
+    transition: 0.3s linear;
+}
+.main-card .date a:hover,.main-card .date a.active{
+    color: #fff;
+}
+
+/* cards */
+.card{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 90%;
+    flex-direction: column;
+    justify-content: end;
+
+}
+.card-icon{
+    display: flex;
+    position: absolute;
+    justify-content: end;
+    padding: 0px 10px 0px 0px;
+    width: 100%;
+    background-color: var(--Light-red-work);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    top: 0px;
+
+}
+.card-icon img{
+    width: 50px;
+}
+.card-content{
+    position: relative;
+    background-color: var(--Dark-blue);
+    height: 80%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+.card-content:hover{
+    background-color: var(--Desaturated-blue);
+}
+.card-content .links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-content .links img{
+    width: 14px;
+    height: 4px;
+}
+.card-content .links a{
+    text-decoration: none;
+    color: #fff;
+}
+.card-content .time-all{
+    display: flex;
+    flex-direction: column;
+}
+.card-content .time h1{
+    color: #fff;
+    font-weight: 200;
+    font-size: 3rem;
+}
+.card-content .last-weeck {
+    color: var(--Pale-Blue);
+    font-size: 12px;
+}
+/**/
+#play .card-icon{
+    background-color: var(--Soft-blue);
+}
+#study .card-icon{
+    background-color: var(--Light-red-study);
+}
+#exercise .card-icon{
+    background-color: var(--Lime-green);
+    img{
+        width: 70px;
+    }
+}
+#social .card-icon{
+    background-color: var(--Violet);
+    
+}
+#self-care .card-icon{
+    background-color: var(--Soft);
+    
+}
+/* TRANSTION */
+.card-content {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-content .time h1 {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-content .last-weeck {
+    transition: opacity 0.3s ease;
+}
+
+/* Animations on hover */
+.card-content:hover {
+    transform: translateY(-5px);
+    background-color: var(--Desaturated-blue);
+}
+/* @media */
+@media (max-width: 699px) {
+    .container{
+        height: auto;
+    }
+
+    
+    .container-card{
+        flex-direction: column;
+        height: 90%;
+        width: 80%;
+    }
+    .main-card{
+        width: 90%;
+    }
+    .main-card .users{
+        flex-direction: row;
+        width: 100%;
+    }
+    .main-card .date{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .columns{
+        flex-direction: column;
+        width: 100%;
+    }
+    .column-1,.column-2{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .card{
+        justify-content: end;
+        height: 127px;
+    }
+    .card-content .time-all{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-content{
+        height: 82%;
+    }
+    .card-icon{
+        height: 20%;
+    }
+}
